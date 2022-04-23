@@ -387,6 +387,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "78cc372d058dcf6d5ecd98510e7fbc9e5aec4d21de70f65fea8fecebcd881bd4"
 
 [[package]]
+name = "gist_rs"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "octocrab",
+ "serde",
+ "serde_derive",
+ "teloxide",
+ "tokio",
+ "toml",
+]
+
+[[package]]
 name = "h2"
 version = "0.3.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -716,19 +729,6 @@ name = "never"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c96aba5aa877601bb3f6dd6a63a969e1f82e60646e81e71b14496995e9853c91"
-
-[[package]]
-name = "notepad_rs"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "octocrab",
- "serde",
- "serde_derive",
- "teloxide",
- "tokio",
- "toml",
-]
 
 [[package]]
 name = "ntapi"
