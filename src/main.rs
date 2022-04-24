@@ -10,6 +10,7 @@ fn parse_cli() -> ArgMatches {
         .author("amirrezaask, raskarpour@gmail.com")
         .version("0.1.0")
         .about("Github Gist CLI tool")
+        .arg(Arg::new("config").required(false).short('c').long("config").takes_value(true).help("config file path"))
         .subcommand(
             Command::new("add").arg(
                 Arg::new("file")
@@ -43,11 +44,12 @@ async fn run_command(cfg: Config, arg_matches: ArgMatches) -> anyhow::Result<()>
         _ => unreachable!(),
     }
 }
+const DEFAULT_CONFIG_PATH: &str = "~/.config/gist/config.toml";
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     let cli_args = parse_cli();
-    let config = Config::new("config.toml").await?;
+    let config = Config::new(cli_args.value_of("config").unwrap_or(DEFAULT_CONFIG_PATH)).await?;
     run_command(config, cli_args).await;
     Ok(())
 }
