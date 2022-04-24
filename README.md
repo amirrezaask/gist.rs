@@ -5,7 +5,7 @@ Simple CLI tool to manage your github gist.
 ### Add command
 ```bash
 USAGE:
-    gist_rs add [OPTIONS] --file <file>
+    gist add [OPTIONS] --file <file>
 
 OPTIONS:
     -d, --desc <desc>    description of the gist
